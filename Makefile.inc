@@ -49,12 +49,12 @@ endif
 
 ifeq ($(PLATFORM),PC)
 LINUX_SRC = /lib/modules/$(shell uname -r)/build
-LINUX_SRC_MODULE = /lib/modules/$(shell uname -r)/kernel/drivers/net/wireless/
+LINUX_SRC_MODULE = /lib/modules/$(KVER)/kernel/drivers/net/wireless/
 CROSS_COMPILE = 
 ARCH =
 endif
 
-export OSABL RT28xx_DIR RT28xx_MODE LINUX_SRC CROSS_COMPILE CROSS_COMPILE_INCLUDE PLATFORM RELEASE CHIPSET MODULE RTMP_SRC_DIR LINUX_SRC_MODULE TARGET HAS_WOW_SUPPORT
+export ARCH KVER OSABL RT28xx_DIR RT28xx_MODE LINUX_SRC CROSS_COMPILE CROSS_COMPILE_INCLUDE PLATFORM RELEASE CHIPSET MODULE RTMP_SRC_DIR LINUX_SRC_MODULE TARGET HAS_WOW_SUPPORT
 
 # The targets that may be used.
 PHONY += all build_tools test LINUX release prerelease clean uninstall install libwapi osabl
